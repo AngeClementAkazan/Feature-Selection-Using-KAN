@@ -45,5 +45,14 @@ on a suite of real and synthetic tabular datasets (classification & regression).
 - ⏱ **Runtime profiling**: Comparison of selector runtimes vs. KAN training cost, and against MI, permutation importance, and SVM-RFE.
 
 ---
-
+## Cite This paper
+``` @misc{akazan2025splinesbasedfeatureimportancekolmogorovarnold,
+      title={Splines-Based Feature Importance in Kolmogorov-Arnold Networks: A Framework for Supervised Tabular Data Dimensionality Reduction}, 
+      author={Ange-Clément Akazan and Verlon Roel Mbingui},
+      year={2025},
+      eprint={2509.23366},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2509.23366},}
+```
 
