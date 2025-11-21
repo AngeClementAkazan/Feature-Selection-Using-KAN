@@ -9,6 +9,29 @@ This repository contains the code accompanying the paper:
 
 We study Kolmogorov–Arnold Networks (KANs) not just as predictors, but as **engines for feature scoring and selection** on tabular classification and regression tasks.
 
+
+
+## Overview
+
+Kolmogorov–Arnold Networks (KANs) replace standard linear weights with **trainable spline functions**, giving each input feature its own small set of 1D splines. This “weights-as-functions” structure naturally exposes feature-wise parameter blocks and gradients that can be turned into **feature-importance scores**.
+
+This repository implements and evaluates four KAN-based selectors:
+
+- **KAN-L1** – Feature score = ℓ₁ norm of spline coefficients attached to each feature.  
+- **KAN-L2** – Feature score = ℓ₂ norm of spline coefficients (proxy for the L² “energy” of the learned univariate transformation).  
+- **KAN-SI** – *Sensitivity Integral*: average magnitude of the gradient of the KAN output w.r.t. each input feature (global derivative-based sensitivity).  
+- **KAN-KO** – *Knock-Out*: increase in validation loss when the spline block of a feature is zeroed out (leave-one-feature-out risk increase).
+
+We compare these to standard baselines:
+
+- **LASSO** (ℓ₁-penalized linear models)  
+- **Random Forest importance** / permutation importance  
+- **Mutual Information (MI) filters**  
+- **SVM-RFE (Recursive Feature Elimination)**
+
+on a suite of real and synthetic tabular datasets (classification & regression).
+
+---
 ## Benchmark results
 
 ### Classification (F1)
@@ -36,29 +59,6 @@ We study Kolmogorov–Arnold Networks (KANs) not just as predictors, but as **en
 </p>
 
 ---
-
-## Overview
-
-Kolmogorov–Arnold Networks (KANs) replace standard linear weights with **trainable spline functions**, giving each input feature its own small set of 1D splines. This “weights-as-functions” structure naturally exposes feature-wise parameter blocks and gradients that can be turned into **feature-importance scores**.
-
-This repository implements and evaluates four KAN-based selectors:
-
-- **KAN-L1** – Feature score = ℓ₁ norm of spline coefficients attached to each feature.  
-- **KAN-L2** – Feature score = ℓ₂ norm of spline coefficients (proxy for the L² “energy” of the learned univariate transformation).  
-- **KAN-SI** – *Sensitivity Integral*: average magnitude of the gradient of the KAN output w.r.t. each input feature (global derivative-based sensitivity).  
-- **KAN-KO** – *Knock-Out*: increase in validation loss when the spline block of a feature is zeroed out (leave-one-feature-out risk increase).
-
-We compare these to standard baselines:
-
-- **LASSO** (ℓ₁-penalized linear models)  
-- **Random Forest importance** / permutation importance  
-- **Mutual Information (MI) filters**  
-- **SVM-RFE (Recursive Feature Elimination)**
-
-on a suite of real and synthetic tabular datasets (classification & regression).
-
----
-
 ## Main Contributions
 
 - 🔍 **KAN-based feature scoring**: Four principled selectors derived directly from KAN spline parameters and gradients (KAN-L1, KAN-L2, KAN-SI, KAN-KO).
