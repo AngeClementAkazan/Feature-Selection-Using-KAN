@@ -1,5 +1,5 @@
 # Splines-Based Feature Importance in Kolmogorov-Arnold Networks: A Framework for Supervised Tabular Data Dimensionality Reduction
-This repo implement four different methods for feature selection using KAN
+This repo implement four different methods for feature selection using Kolmogorov Arnold Networks (KAN)
 # KAN-Based Feature Selection for Tabular Data
 
 This repository contains the code accompanying the paper:
