@@ -32,7 +32,6 @@ We compare these to standard baselines:
 on a suite of real and synthetic tabular datasets (classification & regression).
 
 ---
-## Benchmark results
 
 ### Classification (F1)
 
