@@ -9,6 +9,32 @@ This repository contains the code accompanying the paper:
 
 We study Kolmogorov–Arnold Networks (KANs) not just as predictors, but as **engines for feature scoring and selection** on tabular classification and regression tasks.
 
+## Benchmark results
+
+### Classification (F1)
+
+<p float="left">
+  <img src="breast_cancer_f1.png" width="48%" />
+  <img src="digits_f1.png" width="48%" />
+</p>
+
+<p float="left">
+  <img src="wine_f1.png" width="48%" />
+  <img src="make_classification_f1.png" width="48%" />
+</p>
+
+### Regression (R²)
+
+<p float="left">
+  <img src="california_r2.png" width="48%" />
+  <img src="diabetes_r2.png" width="48%" />
+</p>
+
+<p float="left">
+  <img src="diamonds_r2.png" width="48%" />
+  <img src="make_regression_r2.png" width="48%" />
+</p>
+
 ---
 
 ## Overview
