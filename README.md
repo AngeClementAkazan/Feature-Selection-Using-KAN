@@ -29,11 +29,17 @@ We compare these to standard baselines:
 - **Mutual Information (MI) filters**  
 - **SVM-RFE (Recursive Feature Elimination)**
 
-on a suite of real and synthetic tabular datasets (classification & regression).
+
 
 ---
+## Main Contributions
 
-### Classification (F1)
+- 🔍 **KAN-based feature scoring**: Four principled selectors derived directly from KAN spline parameters and gradients (KAN-L1, KAN-L2, KAN-SI, KAN-KO).
+- 📊 **Systematic evaluation**: Leakage-safe cross-validation across multiple predictors (Logistic Regression, Ridge, Random Forest, Gradient Boosted Trees, XGBoost) and feature-retention levels (e.g., 20%, 40%, 60%).
+- 🧪 **Robustness analyses**:
+  - ### Predictive performance (macro-F1 for classification, R² for regression).
+  
+ **Classification (F1)**
 
 <p float="left">
   <img src="breast_cancer_f1.png" width="48%" />
@@ -45,7 +51,7 @@ on a suite of real and synthetic tabular datasets (classification & regression).
   <img src="make_classification_f1.png" width="48%" />
 </p>
 
-### Regression (R²)
+**Regression (R²)**
 
 <p float="left">
   <img src="california_r2.png" width="48%" />
@@ -57,16 +63,24 @@ on a suite of real and synthetic tabular datasets (classification & regression).
   <img src="make_regression_r2.png" width="48%" />
 </p>
 
----
-## Main Contributions
+  - ### Redundancy (average pairwise correlation among selected features)
+   <p float="left">
+  <img src="redundancy_KAN_L1.png" width="48%" />
+  <img src="redundancy.png" width="48%" />
+</p>
+ 
+  - ### Stability (Jaccard similarity of selected sets across CV folds)
+ <p float="left">
+  <img src="stabilityL1.png" width="48%" />
+  <img src="stability_KO.png" width="48%" /> 
+ </p> 
+ 
+-  ### Interpretability case study 🧠 : 1D spline responses and malignant-class logits for top-ranked features on the Breast Cancer dataset, illustrating how KAN encodes clinically meaningful patterns.
+ <p float="left">
+  <img src="Breast_Cancer_KAN-L2_worst_concave_points.png" width="48%" />
+  <img src="logit.png" width="48%" /> 
+ </p> 
 
-- 🔍 **KAN-based feature scoring**: Four principled selectors derived directly from KAN spline parameters and gradients (KAN-L1, KAN-L2, KAN-SI, KAN-KO).
-- 📊 **Systematic evaluation**: Leakage-safe cross-validation across multiple predictors (Logistic Regression, Ridge, Random Forest, Gradient Boosted Trees, XGBoost) and feature-retention levels (e.g., 20%, 40%, 60%).
-- 🧪 **Robustness analyses**:
-  - Predictive performance (macro-F1 for classification, R² for regression)  
-  - Redundancy (average pairwise correlation among selected features)  
-  - Stability (Jaccard similarity of selected sets across CV folds)  
-- 🧠 **Interpretability case study**: 1D spline responses and malignant-class logits for top-ranked features on the Breast Cancer dataset, illustrating how KAN encodes clinically meaningful patterns.
 - ⏱ **Runtime profiling**: Comparison of selector runtimes vs. KAN training cost, and against MI, permutation importance, and SVM-RFE.
 
 ---
