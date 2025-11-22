@@ -4,7 +4,7 @@ This repo implement four different methods for feature selection using Kolmogoro
 
 This repository contains the code accompanying the paper:
 
-> KAN-based feature selection for tabular data (arXiv:2509.23366)  
+> Splines-Based Feature Importance in Kolmogorov-Arnold Networks: A Framework for Supervised Tabular Data Dimensionality Reduction (arXiv:2509.23366)  
 > [https://arxiv.org/abs/2509.23366](https://arxiv.org/abs/2509.23366)
 
 We study Kolmogorov-Arnold Networks (KANs) not just as predictors, but as **engines for feature scoring and selection** on tabular classification and regression tasks.
@@ -36,7 +36,6 @@ We compare these to standard baselines:
 
 - 🔍 **KAN-based feature scoring**: Four principled selectors derived directly from KAN spline parameters and gradients (KAN-L1, KAN-L2, KAN-SI, KAN-KO).
 - 📊 **Systematic evaluation**: Leakage-safe cross-validation across multiple predictors (Logistic Regression, Ridge, Random Forest, Gradient Boosted Trees, XGBoost) and feature-retention levels (e.g., 20%, 40%, 60%).
-- 🧪 **Robustness analyses**:
   - ### Predictive performance (macro-F1 for classification, R² for regression).
   
  **Classification (F1)**
